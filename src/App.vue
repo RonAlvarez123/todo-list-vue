@@ -1,17 +1,35 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>Todo-List Vue</h1>
+  <TodoInput @add-item="addItem" />
+  <TodoItem @remove-item="removeItem" :List="List" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TodoInput from "./components/TodoInput.vue";
+import TodoItem from "./components/TodoItem.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    TodoInput,
+    TodoItem,
+  },
+  data() {
+    return {
+      List: [],
+    };
+  },
+  methods: {
+    addItem(item) {
+      if (item) {
+        this.List.push(item);
+      }
+    },
+    removeItem(item) {
+      this.List = this.List.filter((currentValue) => currentValue != item);
+    },
+  },
+};
 </script>
 
 <style>

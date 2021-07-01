@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     addItem(item) {
-      if (item) {
+      if (item && !this.List.includes(item)) {
         this.List.push(item);
       }
     },

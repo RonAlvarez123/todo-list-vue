@@ -33,12 +33,27 @@ export default {
 </script>
 
 <style>
+*:focus {
+  outline: none;
+}
+
+body {
+  background-color: rgb(110, 55, 212);
+  display: grid;
+  place-items: center;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  background-color: white;
+  box-shadow: 0 2px 3px rgb(87, 87, 87);
   color: #2c3e50;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-weight: bold;
   margin-top: 60px;
+  padding: 20px;
+  text-align: center;
+  min-width: 300px;
 }
 </style>
